@@ -1,0 +1,27 @@
+@GenModel(
+    bundleManifest="false",
+    modelDirectory="ru.neoflex.nfcore.base/src/java/java-gen",
+    complianceLevel="7.0",
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl",
+    rootExtendsInterface="org.eclipse.emf.ecore.EObject"
+)
+package org.arch7tect.nanoetl.model
+
+class Program {
+    String name
+    contains Declaration[] declarations
+}
+
+abstract class Declaration {
+    String name
+}
+
+class Source extends Declaration {
+    String sourceType
+    contains Property[] properties
+}
+
+class Property {
+    String name
+    String value
+}
